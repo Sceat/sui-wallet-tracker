@@ -78,6 +78,7 @@ watchEffect(async () => {
   width 100vw
   overflow: hidden
   .address
+    text-align center
     color: var(--text-color)
     text-shadow: var(--dark-shadow)
     font-size: .9rem
