@@ -2,7 +2,7 @@ import { JsonRpcProvider, Connection } from '@mysten/sui.js';
 import BN from 'bignumber.js';
 
 const provider = new JsonRpcProvider(
-  new Connection({ fullnode: 'https://fullnode.mainnet.sui.io:443' })
+  new Connection({ fullnode: 'http://178.250.189.106:9000' })
 );
 
 export async function get_tokens(owner) {
