@@ -41,13 +41,13 @@ watchEffect(async () => {
         return true;
       });
 
-    tokens.value = unique_pairs.map(
-      ({ baseToken: { address, symbol }, priceUsd }) => ({
+    tokens.value = unique_pairs
+      .map(({ baseToken: { address, symbol }, priceUsd }) => ({
         address,
         name: symbol,
         value: new BN(amounts[address]).multipliedBy(priceUsd).decimalPlaces(2),
-      })
-    );
+      }))
+      .filter(({ value }) => value.isGreaterThan(2));
 
     balance.value = tokens.value.reduce(
       (sum, { value }) => value.plus(sum),
